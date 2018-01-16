@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/footballgrass">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+
+            <TextView
+                style="@style/nameTextView"
+                android:text="@string/teamA" />
+
+            <TextView
+                android:id="@+id/team_a_score"
+                style="@style/scoreTextView"
+                android:text="@string/initialScore" />
+
+            <Button
+                style="@style/topButtonsMargins"
+                android:onClick="addGoalForTeamA"
+                android:text="@string/goal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+            <Button
+                style="@style/bottomButtonsMargins"
+                android:onClick="addFreeKickForTeamA"
+                android:text="@string/freeKicks" />
+
+            <TextView
+                android:id="@+id/team_a_scoreFreeKicks"
+                style="@style/freeKicksScoreTextView"
+                android:text="@string/initialScore" />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#EEEEEE" />
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                style="@style/nameTextView"
+                android:text="@string/teamB" />
+
+            <TextView
+                android:id="@+id/team_b_score"
+                style="@style/scoreTextView"
+                android:text="@string/initialScore" />
+
+            <Button
+                style="@style/topButtonsMargins"
+                android:onClick="addGoalForTeamB"
+                android:text="@string/goal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
+
+            <Button
+                style="@style/bottomButtonsMargins"
+                android:onClick="addFreeKickForTeamB"
+                android:text="@string/freeKicks" />
+
+            <TextView
+                android:id="@+id/team_b_scoreFreeKicks"
+                style="@style/freeKicksScoreTextView"
+                android:text="@string/initialScore" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:onClick="reset"
+        android:text="@string/resetButton"
+        style="@style/resetButton"/>
+
+</RelativeLayout>
