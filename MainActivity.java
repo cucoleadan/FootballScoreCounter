@@ -17,24 +17,29 @@ public class MainActivity extends AppCompatActivity {
 
     // onSaveInstanceState method to save the content of textViews when the mobile switches from portrait mode to landscape mode
 
+    private static String KEY_SCORE_TEAM_A = "savText1";
+    private static String KEY_FREE_KICK_TEAM_A = "savText2";
+    private static String KEY_SCORE_TEAM_B = "savText3";
+    private static String KEY_FREE_KICK_TEAM_B = "savText4";
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
         // saving the content of textview using the key
-        outState.putInt("savText1", scoreTeamA);
-        outState.putInt("savText2", scoreTeamB);
-        outState.putInt("savText3", freeKickTeamA);
-        outState.putInt("savText4", freeKickTeamB);
+        outState.putInt(KEY_SCORE_TEAM_A, scoreTeamA);
+        outState.putInt(KEY_SCORE_TEAM_B, scoreTeamB);
+        outState.putInt(KEY_FREE_KICK_TEAM_A, freeKickTeamA);
+        outState.putInt(KEY_FREE_KICK_TEAM_B, freeKickTeamB);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreTeamA = savedInstanceState.getInt("savText1");
-        scoreTeamB = savedInstanceState.getInt("savText2");
-        freeKickTeamA = savedInstanceState.getInt("savText3");
-        freeKickTeamB = savedInstanceState.getInt("savText4");
+        scoreTeamA = savedInstanceState.getInt(KEY_SCORE_TEAM_A);
+        scoreTeamB = savedInstanceState.getInt(KEY_SCORE_TEAM_B);
+        freeKickTeamA = savedInstanceState.getInt(KEY_FREE_KICK_TEAM_A);
+        freeKickTeamB = savedInstanceState.getInt(KEY_FREE_KICK_TEAM_B);
 
 
         displayGoalForTeamA(scoreTeamA);
